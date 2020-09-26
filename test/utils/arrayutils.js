@@ -1,6 +1,5 @@
 var arrayUtils = {
-
-  testArrayHighlights: function(arr, hlIndices) {
+  testArrayHighlights: function (arr, hlIndices) {
     for (var i = 0, l = arr.size(); i < l; i++) {
       // test highlights through array.isHighlight
       equal(arr.isHighlight(i), hlIndices[i]);
@@ -9,7 +8,7 @@ var arrayUtils = {
     }
   },
 
-  testArrayValues: function(arr, values) {
+  testArrayValues: function (arr, values) {
     equal(arr.size(), values.length, "Equal array sizes");
     for (var i = 0, l = values.length; i < l; i++) {
       // test values through array
@@ -17,5 +16,5 @@ var arrayUtils = {
       // test values through the corresponding index objects
       equal(arr.index(i).value(), values[i]);
     }
-  }
+  },
 };

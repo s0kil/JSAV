@@ -1,5 +1,5 @@
 .jsavcontainer {
-  overflow:hidden;
+  overflow: hidden;
   width: auto;
   padding: 0.7em;
   border: 1px solid black;
@@ -38,11 +38,19 @@
   margin-right: auto;
 }
 
-.jsavarray, .jsavlabel, .jsavcode, .jsavlist, .jsavtree, .jsavgraph, .jsavmatrix {
+.jsavarray,
+.jsavlabel,
+.jsavcode,
+.jsavlist,
+.jsavtree,
+.jsavgraph,
+.jsavmatrix {
   margin-top: 1em;
   margin-bottom: 1em;
 }
-.jsavhighlight, .jsavarray.jsavbararray .jsavindex.jsavhighlight .jsavvalue, .jsavvariable.jsavhighlight .jsavvalue {
+.jsavhighlight,
+.jsavarray.jsavbararray .jsavindex.jsavhighlight .jsavvalue,
+.jsavvariable.jsavhighlight .jsavvalue {
   background-color: yellow !important;
   color: black !important;
 }
@@ -76,7 +84,7 @@
   list-style: none;
   min-height: 50px;
   padding: 0;
-  clear:both;
+  clear: both;
   white-space: nowrap;
   -webkit-transform-style: preserve-3d;
 }
@@ -147,7 +155,7 @@
 .jsavbararray .jsavnode {
   /* remove shadow from the white bars */
   box-shadow: none;
-} 
+}
 .jsavbararray .jsavindex {
   height: 100%;
   vertical-align: bottom;
@@ -176,7 +184,8 @@
   bottom: 0;
   left: 0;
 }
-.jsavbararray .jsavvalue, .jsavbararray .jsavvaluebar {
+.jsavbararray .jsavvalue,
+.jsavbararray .jsavvaluebar {
   display: block;
   padding: 0;
   position: absolute;
@@ -191,7 +200,7 @@
   font-size: 90%;
   position: relative;
   top: 100%;
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 /* vertical array */
@@ -209,7 +218,8 @@
   width: auto;
   left: -17px;
 }
-.jsavverticalarray .jsavindex:first-of-type, .jsavverticalarray .jsavindex:first-of-type .jsavvalue {
+.jsavverticalarray .jsavindex:first-of-type,
+.jsavverticalarray .jsavindex:first-of-type .jsavvalue {
   -ms-border-top-left-radius: 8px;
   -moz-border-top-left-radius: 8px;
   -o-border-top-left-radius: 8px;
@@ -221,7 +231,8 @@
   -webkit-border-top-right-radius: 8px;
   border-top-right-radius: 8px;
 }
-.jsavverticalarray .jsavindex:last-of-type, .jsavverticalarray .jsavindex:last-of-type .jsavvalue {
+.jsavverticalarray .jsavindex:last-of-type,
+.jsavverticalarray .jsavindex:last-of-type .jsavvalue {
   -ms-border-bottom-left-radius: 8px;
   -moz-border-bottom-left-radius: 8px;
   -o-border-bottom-left-radius: 8px;
@@ -238,7 +249,7 @@
 .jsavmark {
   position: absolute;
   display: none;
-  background-color: #FF6464;
+  background-color: #ff6464;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -251,8 +262,8 @@
 .jsavmarkline {
   position: absolute;
   display: none;
-  height:1px;
-  background-color: #FF6464;
+  height: 1px;
+  background-color: #ff6464;
   background-color: rgba(255, 100, 100, 0.6);
   z-index: 190;
 }
@@ -264,19 +275,19 @@
   overflow: visible;
   border: none;
   background-color: inherit;
-  height:50px;
+  height: 50px;
 }
 .jsavscroll {
-  overflow: auto; 
-  background-color: white; 
+  overflow: auto;
+  background-color: white;
   border: 1px solid black;
-  height:220px;
+  height: 220px;
 }
 .jsavoutput .jsavtitle {
-  display:block;
-  margin-top:2.5em;
-  font-size:300%;
-  text-align:center;
+  display: block;
+  margin-top: 2.5em;
+  font-size: 300%;
+  text-align: center;
 }
 
 .jsavindex.jsavarrow:before {
@@ -314,7 +325,7 @@
 .jsavcontrols span {
   display: inline-block;
   color: #777;
-  font-family: 'Times New Roman';
+  font-family: "Times New Roman";
   font-size: 20px;
   font-weight: bolder;
   line-height: 45px;
@@ -333,7 +344,8 @@
 .jsavplaying span {
   cursor: default;
 }
-.jsavbegin, .jsavend {
+.jsavbegin,
+.jsavend {
   letter-spacing: -2px;
 }
 /**** END STYLING THE CONTROLS ****/
@@ -344,9 +356,9 @@
   background-color: #fff;
   z-index: 1000;
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 .jsavsettings-dialog {
   border-radius: 10px;
@@ -424,7 +436,8 @@
   cursor: -webkit-grab;
   cursor: grab;
 }
-.jsavdialog.ui-draggable-dragging, .jsavdialog.ui-draggable-dragging h2 {
+.jsavdialog.ui-draggable-dragging,
+.jsavdialog.ui-draggable-dragging h2 {
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
   cursor: grabbing;
@@ -454,7 +467,7 @@ a.jsavdialogclose:hover {
 
 .jsavsettings {
   padding: 15px;
-  font-family: Helvetica, Arial
+  font-family: Helvetica, Arial;
 }
 a.jsavsettings {
   background-image: url(images/settings.png);
@@ -471,9 +484,9 @@ a.jsavsettings {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 50%;
-  float:right; 
-  margin-right:10px; 
-  display:block;
+  float: right;
+  margin-right: 10px;
+  display: block;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -561,11 +574,14 @@ a.jsavsettings:hover {
 }
 /********* TREE / GRAPH DATA STRUCTURE *******/
 
-.jsavtree, .jsavgraph, .jsavlist {
+.jsavtree,
+.jsavgraph,
+.jsavlist {
   position: relative;
   background-color: inherit;
 }
-.jsavtreenode, .jsavgraphnode {
+.jsavtreenode,
+.jsavgraphnode {
   border-radius: 23px;
   position: absolute;
 }
@@ -630,12 +646,12 @@ a.jsavsettings:hover {
   border-bottom-right-radius: 3px;
 }
 .jsavhorizontallist .jsavnonext .jsavpointerarea:after {
-    display: inline-block;
-    content: "";
-    height: 104%;
-    width: 1px;
-    background-color: #000;
-    transform: rotate(12deg);
+  display: inline-block;
+  content: "";
+  height: 104%;
+  width: 1px;
+  background-color: #000;
+  transform: rotate(12deg);
 }
 .jsavlist .jsavedge {
   stroke-width: 2;
@@ -650,7 +666,7 @@ ul.jsavcode {
   padding: 0;
 }
 .jsavcodeline {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   padding: 2px 10px;
   white-space: pre;
 }
@@ -726,7 +742,7 @@ ul.jsavcode {
   border-top: 1px solid black;
 }
 
-.jsavmatrix.jsavmatrixplain .jsavarray li.jsavnode, 
+.jsavmatrix.jsavmatrixplain .jsavarray li.jsavnode,
 .jsavmatrix.jsavmatrixmatrix .jsavarray li.jsavnode {
   border: none;
   box-shadow: none;
@@ -737,7 +753,6 @@ ul.jsavcode {
   border-radius: 10px;
   padding: 10px;
 }
-
 
 /******** Event prevention DIV shutter ******/
 .jsavshutter {
@@ -765,7 +780,8 @@ ul.jsavcode {
   height: 100%;
 }
 
-.jsavswap, .jsavswap .jsavvalue {
+.jsavswap,
+.jsavswap .jsavvalue {
   background-color: pink !important;
   color: red !important;
 }
@@ -844,7 +860,7 @@ ul.jsavcode {
 }
 
 .jsavsound {
-  position:relative;
+  position: relative;
   width: 26px;
   height: 26px;
   background-position: 50% 50%;
@@ -858,12 +874,12 @@ ul.jsavcode {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 50%;
-  float:right;
-  margin-right:10px;
-  display:block;
+  float: right;
+  margin-right: 10px;
+  display: block;
   white-space: nowrap;
   overflow: hidden;
-  z-index:500;
+  z-index: 500;
   outline: 0;
 }
 .jsavsound.sound {

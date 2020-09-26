@@ -1,9 +1,9 @@
 /*global ok,test,module,deepEqual,equal,expect,notEqual,arrayUtils */
-(function() {
+(function () {
   "use strict";
   module("anim", {});
 
-  test("slideshow counter", function() {
+  test("slideshow counter", function () {
     var av = new JSAV("arraycontainer"),
       arr = av.ds.array($("#array")),
       i = 0,
@@ -13,7 +13,9 @@
     arr.highlight(1);
     av.recorded(); // will rewind it
     // bind listener to test event firing as well
-    av.container.bind("jsav-updatecounter", function(e) { i++; });
+    av.container.bind("jsav-updatecounter", function (e) {
+      i++;
+    });
     equal("1 / 3", counter.text(), "Testing counter text");
     av.forward();
     equal("2 / 3", counter.text(), "Testing counter text");
@@ -37,7 +39,7 @@
     equal(i, 10, "Number of updatecounter events fired");
   });
 
-  test("animator control events", function() {
+  test("animator control events", function () {
     var av = new JSAV("emptycontainer"),
       arr = av.ds.array([10, 20, 30, 40]),
       props = ["color", "background-color"];
@@ -63,7 +65,7 @@
     arrayUtils.testArrayHighlights(arr, [1, 0, 0, 0], props);
   });
 
-  test("backward/forward filters", function() {
+  test("backward/forward filters", function () {
     var av = new JSAV("emptycontainer"),
       arr = av.ds.array([10, 20, 30, 40]),
       props = ["color", "background-color"];
@@ -83,24 +85,31 @@
     arrayUtils.testArrayHighlights(arr, [1, 1, 1, 1], props);
 
     jQuery.fx.off = true; // turn off smooth animation
-    av.backward(function(step) { return step.options.stop0; }); // should go to beginning
+    av.backward(function (step) {
+      return step.options.stop0;
+    }); // should go to beginning
     equal(av.currentStep(), 0);
     arrayUtils.testArrayHighlights(arr, [0, 0, 0, 0], props);
 
     av.end();
-    av.backward(function(step) { return step.options.stop1; }); // should go to step 1
+    av.backward(function (step) {
+      return step.options.stop1;
+    }); // should go to step 1
     arrayUtils.testArrayHighlights(arr, [1, 0, 0, 0], props);
     equal(av.currentStep(), 1);
     av.begin();
 
-    av.forward(function(step) { return step.options.stop2; }); // end
+    av.forward(function (step) {
+      return step.options.stop2;
+    }); // end
     arrayUtils.testArrayHighlights(arr, [1, 1, 1, 1], props);
     equal(av.currentStep(), 4);
     av.begin();
 
-    av.forward(function(step) { return step.options.stop1; }); // step 2
+    av.forward(function (step) {
+      return step.options.stop1;
+    }); // step 2
     arrayUtils.testArrayHighlights(arr, [1, 1, 0, 0], props);
     equal(av.currentStep(), 2);
-
   });
 })();

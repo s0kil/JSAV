@@ -1,9 +1,10 @@
-(function($) {
+(function ($) {
   "use strict";
-  JSAV.ext.sound = JSAV.anim(function(filename, options) {
+  JSAV.ext.sound = JSAV.anim(function (filename, options) {
     $.ionSound.addSound(filename);
 
-    if (this._soundPlaying) { // stop previous sound
+    if (this._soundPlaying) {
+      // stop previous sound
       // this._soundPlaying is never cleared; we can still stop it
       $.ionSound.stop(this._soundPlaying);
     }
@@ -17,8 +18,8 @@
   });
 
   // register function to be called when JSAV is initialized
-  JSAV.init(function(options) {
+  JSAV.init(function (options) {
     // initialize ionSound on JSAV initialization
-    $.ionSound({sounds: [], path: options.soundPath || "./" });
+    $.ionSound({ sounds: [], path: options.soundPath || "./" });
   });
-}(jQuery));
+})(jQuery);

@@ -1,32 +1,32 @@
 /*global ok,test,module,strictEqual,deepEqual,equal,expect,equals,notEqual,arrayUtils */
-(function() {
+(function () {
   "use strict";
-  module("effects.moveValue", {  });
+  module("effects.moveValue", {});
 
-  var checkArrayValues = function(arr, values) {
+  var checkArrayValues = function (arr, values) {
     for (var i = 0, l = values.length; i < l; i++) {
       strictEqual(arr.value(i), values[i]);
     }
   };
-  var checkTreeValues = function(tree, values) {
+  var checkTreeValues = function (tree, values) {
     // Assumes tree has tree nodes and values three items!
     strictEqual(tree.root().value(), values[0]);
     strictEqual(tree.root().child(0).value(), values[1]);
     strictEqual(tree.root().child(1).value(), values[2]);
   };
-  var checkListValues = function(list, values) {
-    for (var i=0, l = values.length; i < l; i++) {
+  var checkListValues = function (list, values) {
+    for (var i = 0, l = values.length; i < l; i++) {
       strictEqual(list.get(i).value(), values[i]);
     }
   };
 
-  test("Moving between arrays", function() {
+  test("Moving between arrays", function () {
     var values1 = [15, 26, 13, 19, 10],
-        values2 = [152, 262, 132, 192, 102],
-        emptyStrings = ["", "", "", "", ""],
-        av = new JSAV("emptycontainer"),
-        arr1 = av.ds.array(values1),
-        arr2 = av.ds.array(values2);
+      values2 = [152, 262, 132, 192, 102],
+      emptyStrings = ["", "", "", "", ""],
+      av = new JSAV("emptycontainer"),
+      arr1 = av.ds.array(values1),
+      arr2 = av.ds.array(values2);
     for (var i = 0; i < values1.length; i++) {
       av.effects.moveValue(arr1, i, arr2, i);
     }
@@ -48,7 +48,7 @@
     ok(av.forward());
     checkArrayValues(arr2, values1);
     checkArrayValues(arr1, emptyStrings);
-    
+
     ok(av.forward());
     checkArrayValues(arr1, values1);
     checkArrayValues(arr2, emptyStrings);
@@ -56,10 +56,10 @@
     ok(!av.forward());
   });
 
-  test("Moving between nodes", function() {
+  test("Moving between nodes", function () {
     var av = new JSAV("emptycontainer"),
-        tree = av.ds.tree(),
-        list = av.ds.list();
+      tree = av.ds.tree(),
+      list = av.ds.list();
     tree.root().value("TR");
     tree.root().addChild("C0");
     tree.root().addChild("C1");
@@ -114,13 +114,13 @@
     ok(!av.forward()); // no more steps in animation
   });
 
-  test("Moving between nodes and array", function() {
+  test("Moving between nodes and array", function () {
     var av = new JSAV("emptycontainer"),
-        values = [152, 262, 132, 192, 102],
-        arr = av.ds.array(values),
-        tree = av.ds.tree(),
-        list = av.ds.list();
-  
+      values = [152, 262, 132, 192, 102],
+      arr = av.ds.array(values),
+      tree = av.ds.tree(),
+      list = av.ds.list();
+
     tree.root().value("TR");
     tree.root().addChild("C0");
     tree.root().addChild("C1");
@@ -184,16 +184,15 @@
     ok(!av.forward());
   });
 
+  module("effects.copyValue", {});
 
-  module("effects.copyValue", {  });
-
-  test("Copying between arrays", function() {
+  test("Copying between arrays", function () {
     var values1 = [15, 26, 13, 19, 10],
-        values2 = [152, 262, 132, 192, 102],
-        emptyStrings = ["", "", "", "", ""],
-        av = new JSAV("emptycontainer"),
-        arr1 = av.ds.array(values1),
-        arr2 = av.ds.array(values2);
+      values2 = [152, 262, 132, 192, 102],
+      emptyStrings = ["", "", "", "", ""],
+      av = new JSAV("emptycontainer"),
+      arr1 = av.ds.array(values1),
+      arr2 = av.ds.array(values2);
     av.displayInit();
     for (var i = 0; i < values1.length; i++) {
       av.effects.copyValue(arr1, i, arr2, i);
@@ -215,7 +214,7 @@
     ok(av.forward());
     checkArrayValues(arr1, values1);
     checkArrayValues(arr2, values1);
-    
+
     ok(av.forward());
     checkArrayValues(arr1, [15, 26, 15, 19, 10]);
     checkArrayValues(arr2, values1);
@@ -223,10 +222,10 @@
     ok(!av.forward());
   });
 
-  test("Copying between nodes", function() {
+  test("Copying between nodes", function () {
     var av = new JSAV("emptycontainer"),
-        tree = av.ds.tree(),
-        list = av.ds.list();
+      tree = av.ds.tree(),
+      list = av.ds.list();
     tree.root().value("TR");
     tree.root().addChild("C0");
     tree.root().addChild("C1");
@@ -281,13 +280,13 @@
     ok(!av.forward()); // no more steps in animation
   });
 
-  test("Copying between nodes and array", function() {
+  test("Copying between nodes and array", function () {
     var av = new JSAV("emptycontainer"),
-        values = [152, 262, 132, 192, 102],
-        arr = av.ds.array(values),
-        tree = av.ds.tree(),
-        list = av.ds.list();
-  
+      values = [152, 262, 132, 192, 102],
+      arr = av.ds.array(values),
+      tree = av.ds.tree(),
+      list = av.ds.list();
+
     tree.root().value("TR");
     tree.root().addChild("C0");
     tree.root().addChild("C1");
@@ -351,14 +350,14 @@
     ok(!av.forward());
   });
 
-  module("effects.swapValues", {  });
-  test("Swapping between arrays", function() {
+  module("effects.swapValues", {});
+  test("Swapping between arrays", function () {
     var values1 = [15, 26, 13, 19, 10],
-        values2 = [152, 262, 12, 192, 102],
-        emptyStrings = ["", "", "", "", ""],
-        av = new JSAV("emptycontainer"),
-        arr1 = av.ds.array(values1),
-        arr2 = av.ds.array(values2);
+      values2 = [152, 262, 12, 192, 102],
+      emptyStrings = ["", "", "", "", ""],
+      av = new JSAV("emptycontainer"),
+      arr1 = av.ds.array(values1),
+      arr2 = av.ds.array(values2);
     av.displayInit();
     for (var i = 0; i < values1.length; i++) {
       av.effects.swapValues(arr1, i, arr2, i);
@@ -387,10 +386,10 @@
     ok(!av.forward());
   });
 
-  test("Swap between nodes", function() {
+  test("Swap between nodes", function () {
     var av = new JSAV("emptycontainer"),
-        tree = av.ds.tree(),
-        list = av.ds.list();
+      tree = av.ds.tree(),
+      list = av.ds.list();
     tree.root().value("TR");
     tree.root().addChild("C0");
     tree.root().addChild("C1");
@@ -444,13 +443,13 @@
     ok(!av.forward()); // no more steps in animation
   });
 
-  test("Swapping between nodes and array", function() {
+  test("Swapping between nodes and array", function () {
     var av = new JSAV("emptycontainer"),
-        values = [152, 262, 132, 192, 102],
-        arr = av.ds.array(values),
-        tree = av.ds.tree(),
-        list = av.ds.list();
-  
+      values = [152, 262, 132, 192, 102],
+      arr = av.ds.array(values),
+      tree = av.ds.tree(),
+      list = av.ds.list();
+
     tree.root().value("TR");
     tree.root().addChild("C0");
     tree.root().addChild("C1");
@@ -513,5 +512,4 @@
 
     ok(!av.forward());
   });
-
 })();

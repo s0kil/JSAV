@@ -20,5 +20,11 @@
     "examples": "Examples",
     "test": "Unit Tests",
     "src": "Source Files"
+  },
+  "scripts": {
+    "formatter": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^2.1.2"
   }
 }
