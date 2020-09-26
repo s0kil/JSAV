@@ -1,20 +1,21 @@
-#Temp files
-*~
-#Mac stuff
-.DS_Store
-
-#build directory
-build
-
-#Eclipse settings
+# Eclipse Config
 .project
 .settings
 
-#InteliJ IDE settings
+# InteliJ IDE Config
 .idea
 
-#Generated files
-src/version.txt
-src/front.js
-src/version.js
+# VS Code Editor Config
+.vscode
+
+# Temp files
+*~
+
+# Mac stuff
+.DS_Store
+
+# NPM/Node Modules
 node_modules
+
+# Build directory
+dist
